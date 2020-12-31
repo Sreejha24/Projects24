@@ -1,0 +1,28 @@
+*. Created TryHostInGit Visual Studio Application.
+
+How to host our Application in Git?
+*. Goto the top most folder of "TryHostInGit" visual studio solution.
+*. Create .gitignore file (as of now, downloading is the better option)
+*. Enter below commands in Git command prompt
+	>git init
+	>git config user.name "Your name goes here"
+	>git config user.email "your email goes here"
+	>git add . (this command add all files to git)
+	>git commit -m "Comment should be valid and meaningful. This comment is for others reference"
+	>You need to execute the below command FOR THE FIRST TIME as you need to connect to github.
+	    >Create a repository in github.com website (for the present case )
+		>Please exercise care whether to select public, or private option while creating the repository.
+		=> Click on "Create Repository" button to create the repository in github server.
+		>Copy HTTPS url into clipboard for later reference.
+
+	execute the below command:
+	>git remote add origin https://github.com/ashok-login/TryHostInGit.git
+	Execute the below command to push all your changes to server:
+	>git push -u origin master
+
+
+HOW TO CLONE OUR GIT REPOSITORY:
+================================
+	>git config user.name "Your name goes here"
+	>git config user.email "your email goes here"
+	>git clone "get the github url"

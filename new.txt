@@ -1,0 +1,67 @@
+  public IActionResult RawQuery(int id)
+        {
+            var sql = "SELECT * FROM Person WHERE PersonID = {0}";
+
+            var data = _context.Person.FromSqlRaw(sql, id).FirstOrDefault();
+
+            return View(data);
+        }
+
+
+        public IActionResult RawQueryComplex(int id)
+        {
+            IList<PersonAddressview> list = new List<PersonAddressview>();
+            using (var conn = _context.Database.GetDbConnection())
+            {
+                conn.Open();
+                using (var command = conn.CreateCommand())
+                {
+                    var sql = "SELECT P.PersonID, P.FirstName, P.LastName, P.Email, P.Mobile, P.AddressID, A.AddressLine, A.City, A.Pin FROM People P, PAddress A " +
+                        " WHERE P.AddressID = A.AddressID";
+                    command.CommandText = sql;
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                var record = new PersonAddressview()
+                                {
+                                    PersonID = reader.GetInt32(0),
+                                    FirstName = reader.GetString(1),
+                                    LastName = reader.GetString(2),
+                                    Email = reader.GetString(3),
+                                    Mobile = reader.GetInt64(4),
+                                    AddressID = reader.GetInt32(5),
+                                    AddressLine = reader.GetString(6),
+                                    City = reader.GetString(7),
+                                    Pin = reader.GetInt32(8)
+                                };
+                                list.Add(record);
+                            }
+                        }
+                    } // reader
+                } // command
+                conn.Close();
+            } // connection
+
+            return View(list);
+        }
+
+
+
+
+
+ public async Task<ActionResult> Search()
+        {
+            return View(new List<Person>());
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Search(IFormCollection form)
+        {
+            var Keyword = form["Keyword"];
+            var data = await _context.Person.Where(d => d.FirstName.Contains(Keyword) || d.LastName.Contains(Keyword)).ToListAsync();
+            ViewBag.Keyword = Keyword;
+            return View(data);
+        }

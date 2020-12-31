@@ -1,0 +1,16 @@
+D:\A-DeleteMe\NTierArchitecture\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.deps.json
+D:\A-DeleteMe\NTierArchitecture\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.dll
+D:\A-DeleteMe\NTierArchitecture\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.AssemblyInfoInputs.cache
+D:\A-DeleteMe\NTierArchitecture\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.AssemblyInfo.cs
+D:\A-DeleteMe\NTierArchitecture\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.pdb
+D:\A-DeleteMe\NTierArchitecture\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\A-DeleteMe\NTierArchitecture\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.dll
+D:\A-DeleteMe\NTierArchitecture\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.pdb
+\\192.168.50.220\Freshers2020-Trainees\NTierArchitecture\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.deps.json
+\\192.168.50.220\Freshers2020-Trainees\NTierArchitecture\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.dll
+\\192.168.50.220\Freshers2020-Trainees\NTierArchitecture\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csprojAssemblyReference.cache
+\\192.168.50.220\Freshers2020-Trainees\NTierArchitecture\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.AssemblyInfoInputs.cache
+\\192.168.50.220\Freshers2020-Trainees\NTierArchitecture\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.AssemblyInfo.cs
+\\192.168.50.220\Freshers2020-Trainees\NTierArchitecture\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csproj.CoreCompileInputs.cache
+\\192.168.50.220\Freshers2020-Trainees\NTierArchitecture\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.dll
+\\192.168.50.220\Freshers2020-Trainees\NTierArchitecture\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.pdb

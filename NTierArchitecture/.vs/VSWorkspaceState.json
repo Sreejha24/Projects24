@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BusinessAccessLayer",
+    "\\DataAccessLayer",
+    "\\DataAccessLayer\\bin",
+    "\\NTierArchitecture"
+  ],
+  "SelectedNode": "\\NTierArchitecture\\App.config",
+  "PreviewInSolutionExplorer": false
+}

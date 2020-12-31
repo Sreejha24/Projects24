@@ -1,0 +1,6 @@
+C:\Users\sprathipati\Desktop\24\ADONET\ADONETEntityFramework\obj\Debug\netcoreapp3.1\ADONETEntityFramework.csprojAssemblyReference.cache
+C:\Users\sprathipati\Desktop\24\ADONET\ADONETEntityFramework\obj\Debug\netcoreapp3.1\ADONETEntityFramework.AssemblyInfoInputs.cache
+C:\Users\sprathipati\Desktop\24\ADONET\ADONETEntityFramework\obj\Debug\netcoreapp3.1\ADONETEntityFramework.AssemblyInfo.cs
+C:\Users\sprathipati\Desktop\24\ADONET\ADONETEntityFramework\obj\Debug\netcoreapp3.1\ADONETEntityFramework.csproj.CoreCompileInputs.cache
+C:\Users\sprathipati\Desktop\24\ADONET\ADONETEntityFramework\obj\Debug\netcoreapp3.1\ADONETEntityFramework.dll
+C:\Users\sprathipati\Desktop\24\ADONET\ADONETEntityFramework\obj\Debug\netcoreapp3.1\ADONETEntityFramework.pdb

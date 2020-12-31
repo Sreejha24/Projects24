@@ -1,0 +1,210 @@
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE EmployeeTrans
+	-- Add the parameters for the stored procedure here
+	@EmployeeId nvarchar(50),
+	@EmployeeFName nvarchar(50),
+	@EmployeeLName nvarchar(50),
+	@Salary money,
+	@StudentId nvarchar(50),
+	@studentName nvarchar(50),
+	@studentAge nvarchar(50),
+	@studentMarks nvarchar(50)
+
+AS
+BEGIN 
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	
+	BEGIN TRAN
+			BEGIN TRY
+    -- Insert statements for procedure here
+	INSERT INTO dbo.Employees ( EmployeeId,EmployeeFname,EmployeeLname,Salary) VALUES (@EmployeeFName,@EmployeeLName,@EmployeeId,@Salary)
+
+	INSERT INTO dbo.student (studentId,studentName,studentAge,studentMarks) VALUES (@StudentId,@studentAge,@studentMarks,@studentName)
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION
+	END CATCH
+END
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+USE [TollPlusLocal]
+GO
+/****** Object:  StoredProcedure [dbo].[EmployeeTrans]    Script Date: 12/9/2020 10:52:45 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[EmployeeTrans]
+	-- Add the parameters for the stored procedure here
+	@EmployeeId nvarchar(50),
+	@EmployeeFName nvarchar(50),
+	@EmployeeLName nvarchar(50),
+	@Salary money,
+	@StudentId nvarchar(50),
+	@studentName nvarchar(50),
+	@studentAge nvarchar(50),
+	@studentMarks nvarchar(50)
+
+AS
+BEGIN 
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	
+	BEGIN TRAN
+			BEGIN TRY
+    -- Insert statements for procedure here
+	INSERT INTO dbo.Employees ( EmployeeId,EmployeeFname,EmployeeLname,Salary) VALUES (@EmployeeFName,@EmployeeLName,@EmployeeId,@Salary)
+	
+
+	INSERT INTO dbo.student (studentId,studentName,studentAge,studentMarks) VALUES (@StudentId,@studentAge,@studentMarks,@studentName)
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+	
+		ROLLBACK TRANSACTION
+	END CATCH
+END
+
+exec [dbo].[EmployeeTrans] 'pri','pa','rs1',3456,'rs1','12','14','priyank'
+
+select * from [dbo].[Employees] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--BEGIN TRY
+--SELECT 'ITFunda'/0
+--END TRY
+--BEGIN CATCH
+--SELECT ERROR_MESSAGE(), ERROR_NUMBER(), ERROR_PROCEDURE(),
+--ERROR_SEVERITY(), ERROR_STATE(), ERROR_LINE();
+---- THROW 50001, 'Always use integer to divide by', 1 (to throw error, uncomment it)
+--END CATCH
+
+ WITH RANKS AS
+(
+    SELECT Salary,
+           DENSE_RANK() OVER (ORDER BY Salary DESC) AS DENSERANK
+    FROM [dbo].[Employees]
+)
+SELECT TOP 1 Salary
+FROM RANKS
+WHERE DENSERANK = 2
+-------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+namespace exam
+{
+    public class Employe
+    {
+        public int EmpId { get; set; }
+        public string EmpName { get; set; }
+        public decimal Salary { get; set; }
+
+    }
+    public class First
+    {
+        public List<Employe> Get()
+        {
+
+            var employees = new List<Employe>();
+
+
+            var n = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+
+                var emp = new Employe
+                {
+
+                    EmpId = int.Parse(Console.ReadLine()),
+                    EmpName = Console.ReadLine(),
+                    Salary = decimal.Parse(Console.ReadLine())
+                };
+                employees.Add(emp);
+            }
+            return employees;
+        }
+
+        public void Show()
+        {
+            var employees = Get();
+            Console.WriteLine("Print details using foreach loop");
+            //using ForeachLoop
+            foreach (var emp in employees)
+            {
+                Console.WriteLine($"Emp id: {emp.EmpId}\tEmp name: {emp.EmpName}\tSalary: {emp.Salary}");
+            }
+            //using for Loop
+            Console.WriteLine("Print details using for loop");
+            for (int i = 0; i < employees.Count; i++)
+            {
+                var emp = employees[i];
+                Console.WriteLine($"Emp id: {emp.EmpId}\tEmp name: {emp.EmpName}\tSalary: {emp.Salary}");
+            }
+
+        }
+    }
+}
+
